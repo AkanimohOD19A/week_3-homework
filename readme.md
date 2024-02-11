@@ -1,4 +1,4 @@
--- Creating external table referring to gcs path
+#### -- Creating external table referring to gcs path
 CREATE OR REPLACE EXTERNAL TABLE `taxi-rides-ny.nytaxi.fhv_green_tripdata`
 OPTIONS (
   format = 'PARQUET',
@@ -6,14 +6,14 @@ OPTIONS (
 );
 
 
---Count of records for the 2022 Green Taxi Data
+#### --Count of records for the 2022 Green Taxi Data
 SELECT count(*) FROM `taxi-rides-ny.nytaxi.fhv_green_tripdata`;
 
---Count the distinct number of PULocationID
+#### --Count the distinct number of PULocationID
 SELECT COUNT(DISTINCT(PULocationID)) FROM `taxi-rides-ny.nytaxi.fhv_green_tripdata`;
  
 
- --Fare_amount of 0
+#### --Fare_amount of 0
 SELECT count(*) FROM  `taxi-rides-ny.nytaxi.fhv_green_tripdata`
 WHERE fare_amount = 0;
 
